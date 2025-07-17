@@ -28,7 +28,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="kode" class="text-white">Kode Transaksi:</label>
-                <input type="text" value="{{ $kode }}" class="form-select @error('kode') is-invalid @enderror" id="kode" name="kode" placeholder="Masukkan Kode" readonly>
+                <input type="text" value="{{ $kode }}" class="form-control @error('kode') is-invalid @enderror" id="kode" name="kode" placeholder="Masukkan Kode" readonly>
                 @error('kode') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
         </div>
