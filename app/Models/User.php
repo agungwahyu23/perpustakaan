@@ -3,9 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Buku;
+use App\Models\Transaction;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -48,4 +50,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
+    // public function borrowedBooks()
+    // {
+    //     return $this->belongsToMany(Buku::class, 'transactions')
+    //                 ->withPivot(['borrow_date'])
+    //                 ->withTimestamps();
+    // }
 }

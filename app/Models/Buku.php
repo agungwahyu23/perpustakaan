@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Model;
 
 class Buku extends Model
@@ -14,4 +15,9 @@ class Buku extends Model
         'tahun_terbit',
         'status',
     ];
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }
