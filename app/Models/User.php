@@ -55,11 +55,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Transaction::class);
     }
-
-    // public function borrowedBooks()
-    // {
-    //     return $this->belongsToMany(Buku::class, 'transactions')
-    //                 ->withPivot(['borrow_date'])
-    //                 ->withTimestamps();
-    // }
 }
